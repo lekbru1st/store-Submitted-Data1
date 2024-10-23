@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Age-Based Message</title>
+    <style>
+        body, html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class='text-center text-success'><h1>7: Age-Based Message</h1></div>
+    <div class=" container m-5 border p-4 bg-dark text-white ">
+        <form>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age: </label>
+                <input type="number" class="form-control bg-dark text-white" id="age">
+              </div>
+          </form><hr><br>
+          <button  class="btn btn-primary" onclick="submit4()">Submit</button><br><br>
+          <div id="ageDisplay"></div>
+        </div>
+
+
+    <script>
+       
+        function submit4(){
+            const div = document.getElementById('ageDisplay');
+            ageInput = parseInt(document.getElementById('age').value);
+            if(ageInput < 18){
+                div.innerHTML = 'You must be 18 or older to use this site';
+            }else if(ageInput > 18 && ageInput <= 50){
+                div.innerHTML = 'Welcome to the site!'
+            }else if (ageInput > 50){
+                div.innerHTML = 'Thank you for your wisdom!';
+            }
+                
+        }
+    </script>
+</body>
+</html>
